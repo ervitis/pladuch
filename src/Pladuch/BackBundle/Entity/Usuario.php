@@ -51,7 +51,7 @@ class Usuario
     private $email;
 
     /**
-     * @var \Rol
+     * @var Rol
      *
      * @ORM\ManyToOne(targetEntity="Pladuch\DataBundle\Entity\Rol")
      * @ORM\JoinColumns({
