@@ -1,0 +1,7 @@
+pladuch_front:
+    resource: "@PladuchFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+pladuch_back:
+    resource: "@PladuchBackBundle/Resources/config/routing.yml"
+    prefix:   /

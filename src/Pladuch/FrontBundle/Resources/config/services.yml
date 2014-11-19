@@ -1,0 +1,4 @@
+services:
+#    pladuch_front.example:
+#        class: Pladuch\FrontBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

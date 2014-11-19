@@ -1,0 +1,3 @@
+pladuch_back_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: PladuchBackBundle:Default:index }

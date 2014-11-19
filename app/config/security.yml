@@ -1,12 +1,32 @@
 security:
+    encoders:
+        Pladuch\BackBundle\Entity\Usuario:
+            algorithm: sha512
+            encode_as_base64: false
+            iterations: 1
+
     providers:
-        in_memory:
-            memory: ~
+        sga:
+            entity: { class: 'PladuchBackBundle:Usuario', property: username }
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        default:
+        sga:
+            pattern: ^/gestion
             anonymous: ~
+            form_login:
+                login_path: pladuch_login_sga
+                check_path: pladuch_login_sga_check
+                default_target_path: pladuch_sga_index
+                provider: sga
+                csrf_provider: form.csrf_provider
+            logout:
+                path: pladuch_logout_sga
+                target: pladuch_login_sga
+
+    access_control:
+        - { path: ^/gestion/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/gestion, roles: ROLE_ADMIN }
