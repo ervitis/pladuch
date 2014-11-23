@@ -1,3 +1,7 @@
 pladuch_back_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: PladuchBackBundle:Default:index }
+  path:     /acceso
+  defaults: { _controller: PladuchBackBundle:Login:index }
+
+pladuch_back_login:
+  path:     /login
+  defaults: { _controller: PladuchBackBundle:Login:login }

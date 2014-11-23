@@ -1,0 +1,42 @@
+{% extends 'PladuchDataBundle:back:layout.html.twig' %}
+
+{% block pladuch_back_content %}
+
+    {% if error %}
+        <div class="alert alert-danger">Usuario o contraseña erróneos</div>
+    {% endif %}
+
+    <div class="login-box">
+        <div class="login col-xs-12">
+            <form action="{{ path('pladuch_back_login') }}" method="post">
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <div class="form-group">
+                    <div class="margin-between-elements">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" autocomplete="off" class="form-control">
+                    </div>
+
+                    <div class="margin-between-elements">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="_password" autocomplete="off" class="form-control">
+                    </div>
+
+                    <div class="text-center">
+                        <a href="{{ path('pladuch_front_homepage') }}" class="btn btn-warning margin-between-buttons">Cancelar</a>
+                        <button type="submit" class="btn btn-success margin-between-buttons">Acceder</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/pladuch.back.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/contents.css') }}">
+{% endblock %}

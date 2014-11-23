@@ -112,3 +112,9 @@
     color: #222222;
     cursor: pointer;
 }
+
+.margin-between-elements
+{
+    margin: 15px 3px 15px 3px;
+    padding: 5px 5px 5px 5px;
+}

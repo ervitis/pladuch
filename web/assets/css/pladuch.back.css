@@ -1,0 +1,19 @@
+.login
+{
+    background-color: rgba(252,252,252,0.8);
+    width: auto;
+    height: auto;
+    text-align: left;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.login-box
+{
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    left: 40%;
+    top: 20%;
+}
