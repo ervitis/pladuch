@@ -1,0 +1,114 @@
+.fondo
+{
+    background-color: grey;
+    background-image: url("../img/fondo.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.panel
+{
+    background-color: rgba(252, 252, 252, 0.5);
+    position: absolute;
+    z-index: 1000;
+    top: 10%;
+    left: 2%;
+    border-radius: 5%;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+}
+
+.boton-menu
+{
+    font: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    font-size: large;
+    margin: 20px 4px 15px 2px;
+    padding: 7px 7px 7px 7px;
+}
+
+.boton-menu a
+{
+    text-decoration: none;
+    display: block;
+    color: #ffffff;
+}
+
+.boton-menu a:hover
+{
+    text-decoration: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.boton-menu a:active
+{
+    text-decoration: none;
+    outline: 0;
+    color: #ffffff;
+}
+
+.boton-menu a:visited
+{
+    text-decoration: none;
+    outline: 0;
+    color: #ffffff;
+}
+
+.bottom
+{
+    position: absolute;
+    background-color: rgba(252, 252, 252, 0.7);
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+}
+
+.bottom-bussiness
+{
+    font: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    font-size: small;
+    text-align: left;
+}
+
+.bottom-login
+{
+    text-align: right;
+    font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: small;
+    color: #f5f5f5;
+}
+
+.link-general a
+{
+    text-decoration: none;
+    outline: 0;
+    color: #222222;
+    cursor: pointer;
+}
+
+.link-general a:hover
+{
+    text-decoration: none;
+    outline: 0;
+    color: #222222;
+    cursor: pointer;
+}
+
+.link-general a:visited
+{
+    text-decoration: none;
+    outline: 0;
+    color: #222222;
+    cursor: pointer;
+}
+
+.link-general a:active
+{
+    text-decoration: none;
+    outline: 0;
+    color: #222222;
+    cursor: pointer;
+}
