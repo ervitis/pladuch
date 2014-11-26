@@ -8,10 +8,14 @@ use Pladuch\DataBundle\Entity\Rol;
 /**
  * Usuario
  *
- * @ORM\Table(name="usuario", uniqueConstraints={@ORM\UniqueConstraint(name="username", columns={"username"})}, indexes={@ORM\Index(name="FK_USUARIO_ROL", columns={"rol_id"})})
- * @ORM\Entity
+ * @ORM\Table(name="usuario",
+ *            uniqueConstraints={
+ *              @ORM\UniqueConstraint(name="username", columns={"username"})
+ *            },
+ *            indexes={@ORM\Index(name="FK_USUARIO_ROL", columns={"rol_id"})})
+ * @ORM\Entity(repositoryClass="Pladuch\BackBundle\Repository\UsuarioRepository")
  */
-class Usuario
+class Usuario extends BaseUser
 {
     /**
      * @var integer
@@ -20,35 +24,35 @@ class Usuario
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=255, nullable=false)
      */
-    private $username;
+    protected $username;
 
     /**
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=1024, nullable=false)
      */
-    private $password;
+    protected $password;
 
     /**
      * @var string
      *
      * @ORM\Column(name="salt", type="string", length=1024, nullable=false)
      */
-    private $salt;
+    protected $salt;
 
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, nullable=false)
      */
-    private $email;
+    protected $email;
 
     /**
      * @var Rol
@@ -58,7 +62,7 @@ class Usuario
      *   @ORM\JoinColumn(name="rol_id", referencedColumnName="id")
      * })
      */
-    private $rol;
+    protected $rol;
 
 
 
@@ -185,5 +189,13 @@ class Usuario
     public function getRol()
     {
         return $this->rol;
+    }
+
+    /**
+     * @return array|\Symfony\Component\Security\Core\Role\Role[]
+     */
+    public function getRoles()
+    {
+        return array($this->getRol()->getNombre());
     }
 }

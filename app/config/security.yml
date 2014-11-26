@@ -14,19 +14,17 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        sga:
-            pattern: ^/gestion
+        secured_area:
+            pattern: ^/
             anonymous: ~
             form_login:
                 login_path: pladuch_login_sga
-                check_path: pladuch_login_sga_check
-                default_target_path: pladuch_sga_index
-                provider: sga
+                check_path: pladuch_login_check
                 csrf_provider: form.csrf_provider
             logout:
                 path: pladuch_logout_sga
                 target: pladuch_login_sga
 
     access_control:
-        - { path: ^/gestion/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/gestion, roles: ROLE_ADMIN }

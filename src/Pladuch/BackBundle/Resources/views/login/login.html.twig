@@ -1,14 +1,14 @@
 {% extends 'PladuchDataBundle:back:layout.html.twig' %}
 
 {% block pladuch_back_content %}
-
-    {% if error %}
-        <div class="alert alert-danger">Usuario o contraseña erróneos</div>
-    {% endif %}
-
     <div class="login-box">
+
+        {% if error %}
+            <div class="alert alert-danger">Usuario o contraseña erróneos</div>
+        {% endif %}
+
         <div class="login col-xs-12">
-            <form action="{{ path('pladuch_back_login') }}" method="post">
+            <form action="{{ path('pladuch_login_sga') }}" method="post">
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
