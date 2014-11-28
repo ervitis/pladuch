@@ -3,7 +3,6 @@
 namespace Pladuch\BackBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Pladuch\DataBundle\Entity\Rol;
 
 /**
  * Usuario
@@ -21,7 +20,7 @@ class Usuario extends BaseUser
      * @var integer
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
+     * @ORM\Id()
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     protected $id;
@@ -57,12 +56,19 @@ class Usuario extends BaseUser
     /**
      * @var Rol
      *
-     * @ORM\ManyToOne(targetEntity="Pladuch\DataBundle\Entity\Rol")
+     * @ORM\ManyToOne(targetEntity="Rol")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="rol_id", referencedColumnName="id")
      * })
      */
     protected $rol;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="activo", type="boolean", nullable=true)
+     */
+    protected $activo = true;
 
 
 
@@ -196,6 +202,29 @@ class Usuario extends BaseUser
      */
     public function getRoles()
     {
-        return array($this->getRol()->getNombre());
+        return array($this->getRol()->getRol());
+    }
+
+    /**
+     * Set activo
+     *
+     * @param $activo
+     * @return $this
+     */
+    public function setActivo($activo)
+    {
+        $this->activo = $activo;
+
+        return $this;
+    }
+
+    /**
+     * Get activo
+     *
+     * @return bool
+     */
+    public function getActivo()
+    {
+        return $this->activo;
     }
 }

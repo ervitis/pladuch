@@ -15,9 +15,8 @@ class UsuarioRepository extends EntityRepository implements UserProviderInterfac
     public function loadUserByUsername($username)
     {
         $q = $this->createQueryBuilder('u')
-            ->where('u.username = :username OR u.email = :email')
+            ->where('u.username = :username')
             ->setParameter('username', $username)
-            ->setParameter('email', $username)
             ->getQuery();
 
         try {
@@ -37,10 +36,12 @@ class UsuarioRepository extends EntityRepository implements UserProviderInterfac
         if (! $this->supportsClass($class)) {
             throw new UnsupportedUserException(sprintf('Instances of %s are not suppoted', $class));
         }
+
+        return $this->find($userInterface->getId());
     }
 
     public function supportsClass($class)
     {
-        return $this->getEntityName() === $class or is_subclass_of($class, $this->getEntityName());
+        return $this->getEntityName() === $class || is_subclass_of($class, $this->getEntityName());
     }
 }

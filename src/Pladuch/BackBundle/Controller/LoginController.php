@@ -13,19 +13,6 @@ class LoginController extends Controller
     /**
      * @Template("PladuchBackBundle:login:login.html.twig")
      *
-     * @return array
-     */
-    public function indexAction()
-    {
-        return array(
-            'error'         => false,
-            'last_username' => '',
-        );
-    }
-
-    /**
-     * @Template("PladuchBackBundle:login:login.html.twig")
-     *
      * @param Request $request
      * @return array
      */
@@ -33,7 +20,7 @@ class LoginController extends Controller
     {
         $security = $this->get('security.context');
         if ($security->isGranted('IS_AUTHENTICATED_FULLY')) {
-            return $this->redirect($this->generateUrl(''));
+            return $this->redirect($this->generateUrl('pladuch_sga_index'));
         }
 
         $session = $request->getSession();

@@ -17,22 +17,23 @@ abstract class BaseUser implements AdvancedUserInterface, \Serializable
 
     public function __construct()
     {
+        $this->isActive = true;
         $this->salt = $this->generateSalt();
     }
 
     public function serialize()
     {
-        return serialize($this->id, $this->username);
+        return serialize(array($this->id, $this->username, $this->password));
     }
 
     public function unserialize($serialized)
     {
-        list($this->id, $this->username) = unserialize($serialized);
+        list($this->id, $this->username, $this->password) = unserialize($serialized);
     }
 
     public function getRoles()
     {
-        return array('ROLE_USER');
+        return array('ROLE_ADMIN');
     }
 
     public function getPassword()

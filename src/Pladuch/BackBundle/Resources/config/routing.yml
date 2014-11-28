@@ -1,13 +1,13 @@
-pladuch_back_homepage:
-  path:     /acceso
-  defaults: { _controller: PladuchBackBundle:Login:index }
-
 pladuch_login_sga:
-  pattern:     /login
+  pattern:     /gestion/login
   defaults: { _controller: PladuchBackBundle:Login:login }
 
 pladuch_login_check:
-  pattern:     /login_check
+  pattern:     /gestion/login_check
 
 pladuch_logout_sga:
-  pattern:  /logout
+  pattern:  /gestion/logout
+
+pladuch_sga_index:
+  pattern:  /gestion/index
+  defaults: { _controller: PladuchBackBundle:Sga:index }

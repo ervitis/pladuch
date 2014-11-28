@@ -1,6 +1,6 @@
 security:
     encoders:
-        Pladuch\BackBundle\Entity\Usuario:
+        Pladuch\BackBundle\Entity\BaseUser:
             algorithm: sha512
             encode_as_base64: false
             iterations: 1
@@ -14,17 +14,19 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        secured_area:
-            pattern: ^/
+        sga:
+            pattern: ^/gestion
             anonymous: ~
             form_login:
                 login_path: pladuch_login_sga
                 check_path: pladuch_login_check
+                default_target_path: pladuch_sga_index
                 csrf_provider: form.csrf_provider
+                provider: sga
             logout:
                 path: pladuch_logout_sga
                 target: pladuch_login_sga
 
     access_control:
-        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/gestion/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/gestion, roles: ROLE_ADMIN }

@@ -8,7 +8,7 @@
         {% endif %}
 
         <div class="login col-xs-12">
-            <form action="{{ path('pladuch_login_sga') }}" method="post">
+            <form action="{{ path('pladuch_login_check') }}" method="post">
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 

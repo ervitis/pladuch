@@ -1,6 +1,6 @@
 <?php
 
-namespace Pladuch\DataBundle\Entity;
+namespace Pladuch\BackBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,9 +31,9 @@ class Rol
     /**
      * @var string
      *
-     * @ORM\Column(name="tipo", type="string", length=255, nullable=false)
+     * @ORM\Column(name="rol", type="string", length=255, nullable=false)
      */
-    private $tipo;
+    private $rol;
 
 
 
@@ -73,12 +73,12 @@ class Rol
     /**
      * Set tipo
      *
-     * @param string $tipo
+     * @param string $rol
      * @return Rol
      */
-    public function setTipo($tipo)
+    public function setRol($rol)
     {
-        $this->tipo = $tipo;
+        $this->tipo = $rol;
 
         return $this;
     }
@@ -88,8 +88,18 @@ class Rol
      *
      * @return string 
      */
-    public function getTipo()
+    public function getRol()
     {
-        return $this->tipo;
+        return $this->rol;
+    }
+
+    /**
+     * Magic method
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getNombre();
     }
 }
