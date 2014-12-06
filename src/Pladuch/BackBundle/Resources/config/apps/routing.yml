@@ -1,3 +1,11 @@
 pladuch_catalogo:
-  pattern:  /catalogo
-  defaults: { _controller: PladuchBackBundle:Catalogo:index }
+  resource: "@PladuchBackBundle/Resources/config/apps/catalogo/routing.yml"
+  prefix: /catalogo
+
+pladuch_muestras:
+  resource: "@PladuchBackBundle/Resources/config/apps/muestras/routing.yml"
+  prefix: /muestras
+
+pladuch_platos:
+  resource: "@PladuchBackBundle/Resources/config/apps/platos/routing.yml"
+  prefix: /platos

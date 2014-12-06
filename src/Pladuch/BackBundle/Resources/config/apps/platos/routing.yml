@@ -1,0 +1,3 @@
+pladuch_platos_index:
+  pattern:  /index
+  defaults: { _controller: PladuchBackBundle:Platos:index }
