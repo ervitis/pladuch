@@ -2,3 +2,35 @@
 {
     margin: 1px 5px 1px 5px;
 }
+
+.link-general a
+{
+    text-decoration: none;
+    outline: 0;
+    color: #222222;
+    cursor: pointer;
+}
+
+.link-general a:hover
+{
+    text-decoration: none;
+    outline: 0;
+    color: #222222;
+    cursor: pointer;
+}
+
+.link-general a:visited
+{
+    text-decoration: none;
+    outline: 0;
+    color: #222222;
+    cursor: pointer;
+}
+
+.link-general a:active
+{
+    text-decoration: none;
+    outline: 0;
+    color: #222222;
+    cursor: pointer;
+}

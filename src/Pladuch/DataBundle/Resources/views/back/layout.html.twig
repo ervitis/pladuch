@@ -22,13 +22,22 @@
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-theme.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/pladuch.front.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/contents.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/pladuch.back.css') }}">
     {% endblock %}
 
-    <body class="fondo">
+    <body>
 
-        {% block pladuch_back_content %}
-        {% endblock %}
+        {% include 'PladuchBackBundle:sga/panel:logo.html.twig' %}
+
+        {% include 'PladuchBackBundle:sga/panel:panel.html.twig' %}
+
+        <div class="main">
+            {% block pladuch_back_content %}
+            {% endblock %}
+        </div>
+
+        {% include 'PladuchBackBundle:sga/panel:footer.html.twig' %}
 
     </body>
 

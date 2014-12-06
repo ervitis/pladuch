@@ -11,3 +11,7 @@ pladuch_logout_sga:
 pladuch_sga_index:
   pattern:  /gestion/index
   defaults: { _controller: PladuchBackBundle:Sga:index }
+
+pladuch_sga_apps:
+  resource: "@PladuchBackBundle/Resources/config/apps/routing.yml"
+  prefix:   /gestion/apps

@@ -25,7 +25,7 @@ security:
                 provider: sga
             logout:
                 path: pladuch_logout_sga
-                target: pladuch_login_sga
+                target: pladuch_front_homepage
 
     access_control:
         - { path: ^/gestion/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }

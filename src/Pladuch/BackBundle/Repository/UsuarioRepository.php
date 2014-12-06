@@ -37,7 +37,7 @@ class UsuarioRepository extends EntityRepository implements UserProviderInterfac
             throw new UnsupportedUserException(sprintf('Instances of %s are not suppoted', $class));
         }
 
-        return $this->find($userInterface->getId());
+        return $userInterface;
     }
 
     public function supportsClass($class)

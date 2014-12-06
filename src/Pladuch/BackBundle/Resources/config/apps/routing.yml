@@ -1,0 +1,3 @@
+pladuch_catalogo:
+  pattern:  /catalogo
+  defaults: { _controller: PladuchBackBundle:Catalogo:index }
