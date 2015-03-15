@@ -2,4 +2,33 @@
 
 {% block pladuch_back_content %}
     <h2>Catálogo Pladuch</h2>
+
+    <div class="col-xs-12">
+        {% if catalogo|length %}
+            <table class="table table-center">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Foto</th>
+                    <th colspan="2">Operaciones</th>
+                </tr>
+                {% for c in catalogo %}
+                    <tr>
+                        <td>{{ c.nombre }}</td>
+                        <td><img class="thumb thumbnail" src="{{ asset(rutaFoto ~ '/' ~ c.rutaFoto) }}"></td>
+                        <td><a class="btn btn-success btn-sm" href="{{ path('pladuch_catalogo_show', {'id': ids[loop.index0]}) }}"><i class="fa fa-info"></i> Detalles</a></td>
+                        <td><a class="btn btn-danger btn-sm" href="{{ path('pladuch_catalogo_delete', {'id': ids[loop.index0]}) }}"><i class="fa fa-trash"></i> Eliminar</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <div class="col-xs-12 text-center">
+                <p class="text-warning">No hay elementos</p>
+            </div>
+        {% endif %}
+
+        <div class="col-xs-12 text-right">
+            <a class="btn btn-default" href="{{ path('pladuch_catalogo_new') }}"><i class="fa fa-edit"></i> Nuevo</a>
+        </div>
+    </div>
+
 {% endblock %}

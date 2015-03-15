@@ -1,3 +1,19 @@
 pladuch_catalogo_index:
   pattern:  /index
   defaults: { _controller: PladuchBackBundle:Catalogo:index }
+
+pladuch_catalogo_new:
+  pattern:  /new
+  defaults: { _controller: PladuchBackBundle:Catalogo:new }
+
+pladuch_catalogo_delete:
+  pattern:  /delete/{id}
+  defaults: { _controller: PladuchBackBundle:Catalogo:delete }
+
+pladuch_catalogo_show:
+  pattern:  /show/{id}
+  defaults: { _controller: PladuchBackBundle:Catalogo:show }
+
+pladuch_catalogo_edit:
+  pattern:  /edit/{id}
+  defaults: { _controller: PladuchBackBundle:Catalogo:edit, id: null }

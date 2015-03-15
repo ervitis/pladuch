@@ -44,7 +44,7 @@ class CreateAdminUserCommand extends ContainerAwareCommand
         $usuario->setUsername($username);
         $usuario->setEmail($email);
         $usuario->setPassword(Utilities::generatePassword($factory, $usuario, $password));
-        $usuario->setRol($doctrine->getRepository('PladuchDataBundle:Rol')->findOneByRol('admin'));
+        $usuario->setRol($doctrine->getRepository('PladuchDataBundle:Rol')->findOneByNombre('Administrador'));
 
         $em = $this->getDoctrine()->getManager();
 

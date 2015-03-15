@@ -1,0 +1,11 @@
+{% extends 'PladuchDataBundle:back:layout.html.twig' %}
+
+{% block pladuch_back_content %}
+
+    {% include 'PladuchBackBundle:catalogo/forms:newform.html.twig' with {'form': form} %}
+
+    <div class="col-xs-12 margin-between-elements text-left">
+        <a class="btn btn-warning" href="{{ path('pladuch_catalogo_index') }}">Atrás</a>
+    </div>
+
+{% endblock %}

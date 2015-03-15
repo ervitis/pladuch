@@ -1,0 +1,8 @@
+uploads:
+    platos: uploads/platos
+        filesize: 5MB
+        mimetype: [
+          'image/jpeg',
+           'image/gif',
+           'image/png'
+        ]

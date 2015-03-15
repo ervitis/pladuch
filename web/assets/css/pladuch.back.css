@@ -83,8 +83,9 @@
 .main
 {
     position: absolute;
-    top: 15%;
+    top: 17%;
     left: 15%;
     margin: 5px;
     padding: 2px;
+    width: 70%;
 }

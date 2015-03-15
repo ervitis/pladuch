@@ -1,0 +1,31 @@
+{% extends 'PladuchDataBundle:back:layout.html.twig' %}
+
+{% block pladuch_back_content %}
+    <div class="col-xs-12">
+        <table class="table table-center">
+            <tr>
+                <th>Descripción</th>
+                <th>Idioma</th>
+                <th>Operaciones</th>
+            </tr>
+
+            {% if detalle|length %}
+                {% for d in detalle %}
+                    <tr>
+                        <td>{{ d.descripcion }}</td>
+                        <td>{{ d.idiomaId }}</td>
+                        <td><a class="btn btn-default btn-sm" href="{{ path('pladuch_catalogo_edit', {'id': ids[loop.index0]}) }}"><i class="fa fa-edit"></i> Editar</a></td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3" class="text-warning text-center">No tiene ninguna descripción del producto</td>
+                </tr>
+            {% endif %}
+        </table>
+
+        <div class="text-right">
+            <a class="btn btn-default" href="{{ path('pladuch_catalogo_edit') }}"><i class="fa fa-edit"></i> Nuevo</a>
+        </div>
+    </div>
+{% endblock %}

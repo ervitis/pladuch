@@ -27,4 +27,14 @@ class Utilities
 
         return $encoder->encodePassword($password, $entity->getSalt());
     }
+
+    public static function encode($value)
+    {
+        return base64_encode($value);
+    }
+
+    public static function decode($value)
+    {
+        return base64_decode($value);
+    }
 }
